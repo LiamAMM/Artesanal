@@ -30,14 +30,14 @@ public class TestServirCervezaAI {
 	@Test
 	void deberiaServirCervezaCuandoHayCantidadSuficienteUsandoConstructorPorDefecto() {
 		// Valida que, usando el constructor de 4 parámetros (con código y capacidad por defecto de 10000),
-		// se sirve la cantidad solicitada, se actualiza la cantidad actual y se calcula el total a pagar.
+		// llenarMaquina() deja 9800.0 ml (capacidadMaxima - 200) y al servir 500.0 ml quedan 9300.0 ml.
 		Maquina maquina = new Maquina("M2", "Stout Negra", "Cerveza oscura con notas a café", 0.03);
-		maquina.llenarMaquina(); // Deja 9900.0 ml disponibles
+		maquina.llenarMaquina(); // Deja 9800.0 ml disponibles
 
 		double totalPagar = maquina.servirCerveza(500.0);
 
 		assertEquals(500.0 * 0.03, totalPagar, DELTA);
-		assertEquals(9400.0, maquina.getCantidadActual(), DELTA);
+		assertEquals(9300.0, maquina.getCantidadActual(), DELTA);
 		assertEquals("M2", maquina.getCodigo());
 	}
 
