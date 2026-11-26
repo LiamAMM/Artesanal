@@ -66,7 +66,7 @@ public class Maquina {
 	public void imprimir() {
 		String mensaje;
 
-		mensaje = "Codigo: " + codigo + "Nombre cerveza: " + nombreCerveza + " , Descripcion: " + descripcion + " , Precio por Ml: "
+		mensaje = "Codigo: " + codigo + ", Nombre cerveza: " + nombreCerveza + " , Descripcion: " + descripcion + " , Precio por Ml: "
 				+ precioPorMl + " , Capacidad Maxima: " + capacidadMaxima + ", Cantidad Actual: " + cantidadActual;
 		System.out.println(mensaje);
 	}
